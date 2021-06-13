@@ -93,6 +93,50 @@ namespace MaximumTest
             Assert.AreEqual(expected, actual);
             Assert.Pass();
         }//End of TC2:-TC2.1/TC2.2/TC2.3
+         //TC3.1:-The test data has Longest Word in the first Position
+        [Test]
+        public void LongestString_ValueAt_First_Parameter_Return_Highest_Value()
+        {
+            MaximumNumber maximum = new MaximumNumber();
+            //Arrange
+            string firstString = "Pomegranate", secondString = "Apple", thirdString = "Banana";
+            string expected = "Pomegranate";
+            //act
+            string actual = maximum.FindLongestString(firstString, secondString, thirdString);
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.Pass();
+        }
+        //TC3.2:-The test data has Longest Word in the Second Position
+        [Test]
+        public void LongestString_ValueAt_Second_Parameter_Return_Highest_Value()
+        {
+            MaximumNumber maximum = new MaximumNumber();
+            //Arrange
+            string firstString = "Apple", secondString = "Pomegranate", thirdString = "Banana";
+            string expected = "Pomegranate";
+            //act
+            string actual = maximum.FindLongestString(firstString, secondString, thirdString);
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.Pass();
+        }
+        //TC3.3:-The test data has Longest Word in the Third Position
+        [Test]
+        public void LongestString_ValueAt_Third_Parameter_Return_Highest_Value()
+        {
+            MaximumNumber maximum = new MaximumNumber();
+            //Arrange
+            string firstString = "Apple", secondString = "Banana", thirdString = "Pomegranate";
+            string expected = "Pomegranate";
+            //act
+            string actual = maximum.FindLongestString(firstString, secondString, thirdString);
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.Pass();
+        }//End of TC3:-TC3.1/TC3.2/TC3.3
+
+
 
     }
 }
