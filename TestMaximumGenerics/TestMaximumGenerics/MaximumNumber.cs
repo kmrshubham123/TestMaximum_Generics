@@ -184,6 +184,14 @@ namespace TestMaximumGenerics
             dataType[] sortedArray = Sort(this.array);
             return sortedArray[sortedArray.Length - 1];
         }
+        /// <summary>
+        /// UC5:-adding Max method to print the max
+        /// </summary>
+        public void PrintMax()
+        {
+            dataType[] sortedArray = Sort(this.array);
+            Console.WriteLine("Max Value:- "+sortedArray[sortedArray.Length - 1]);
+        }
     }
 
 }
