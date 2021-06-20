@@ -211,6 +211,47 @@ namespace MaximumTest
             Assert.AreEqual(expected, result);
             Assert.Pass();
         }
+        //UC:-4 Extended the max method to take more than three Parameter
+        [Test]
+        public void Passing_Integer_Array_Should_Return_Maximum_Value()
+        {
+            //Arrange
+            int[] intArray = { 525, 625, 462, 890, 900 };
+            int expected = 900;
+            //Act
+            FindMaximum<int> find = new FindMaximum<int>(intArray);
+            int actual = find.FindMaxValue();
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.Pass();
+        }
+        [Test]
+        public void Passing_float_Array_Should_Return_Maximum_Value()
+        {
+            float[] floatArray = { 30.2f, 38.5f, 42.4f, 59.5f, 69.8f };
+            float expected = 69.8f;
+            FindMaximum<float> find = new FindMaximum<float>(floatArray);
+            float actual = find.FindMaxValue();
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void Passing_double_Array_Should_Return_Maximum_Value()
+        {
+            double[] doubleArray = { 50.23, 89.26, 38.98, 99.99 };
+            double expected = 99.99;
+            FindMaximum<double> find = new FindMaximum<double>(doubleArray);
+            double actual = find.FindMaxValue();
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void Passing_string_Array_Should_Return_Maximum_Value()
+        {
+            string[] strArray = { "Banana", "Guava", "Papaya", "Pomegranate", "Strawbeery" };
+            string expected = "Strawbeery";
+            FindMaximum<string> find = new FindMaximum<string>(strArray);
+            string actual = find.FindMaxValue();
+            Assert.AreEqual(expected, actual);
+        }
 
 
 
