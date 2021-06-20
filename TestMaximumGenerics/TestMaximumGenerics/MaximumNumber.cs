@@ -125,6 +125,44 @@ namespace TestMaximumGenerics
         }
 
     }
+    /// <summary>
+    /// create Generic class in 3 variables of Generic Type
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class GenericMaximum<T> where T : IComparable
+    {
+        public T firstValue; T secondValue; T thirdValue;
+        public GenericMaximum(T firstValue, T secondValue, T thirdValue)
+        {
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
 
-    
+        }
+        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
+        {
+            if (Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0)
+            {
+                return firstValue;
+            }
+            if (Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            if (Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0)
+            {
+                return thirdValue;
+            }
+            return default;
+        }
+       
+    }
+
+
 }

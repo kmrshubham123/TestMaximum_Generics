@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using TestMaximumGenerics;
 
+
 namespace MaximumTest
 {
     public class Tests
@@ -136,7 +137,7 @@ namespace MaximumTest
             Assert.Pass();
         }//End of TC3:-TC3.1/TC3.2/TC3.3
 
-        //Refactor 1:-
+        //Refactor 1:- 3 to one Generic Method
         [Test]
         public void MaximumInt_ValueAt_FirstParameter_Return_Highest_value()
         {
@@ -173,8 +174,43 @@ namespace MaximumTest
             Assert.AreEqual(expected, result);
             Assert.Pass();
         }
-
-
+        //Refactor 2:- create Generic Class and new test case to use the Generic Class
+        [Test]
+        public void MaxInt_ValueAt_FirstParameter_Return_Highest_value()
+        {
+            //Arrange
+            int firstValue = 30, secondValue = 20, thirdValue = 10;
+            int expected = 30;
+            //Act
+            int result = GenericMaximum<int>.MaxValue(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+            Assert.Pass();
+        }
+        [Test]
+        public void MaxFloat_ValueAt_FirstParameter_Return_Highest_value()
+        {
+            //Arrange
+            float firstValue = 30.50f, secondValue = 20.99f, thirdValue = 10.68f;
+            float expected = 30.50f;
+            //Act
+            float result = GenericMaximum<float>.MaxValue(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+            Assert.Pass();
+        }
+        [Test]
+        public void MaxString_ValueAt_FirstParameter_Return_Highest_value()
+        {
+            //Arrange
+            string firstValue = "Pomegranate", secondValue = "Apple", thirdValue = "Banana";
+            string expected = "Pomegranate";
+            //Act
+            string result = GenericMaximum<string>.MaxValue(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+            Assert.Pass();
+        }
 
 
 
