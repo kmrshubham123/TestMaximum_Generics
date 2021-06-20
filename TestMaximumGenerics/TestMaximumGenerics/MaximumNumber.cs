@@ -93,6 +93,38 @@ namespace TestMaximumGenerics
             }
             return firstString;
         }//End of string FindLongestString
+        /// <summary>
+        /// Refactor all 3 to one generic Method
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="firstValue"></param>
+        /// <param name="secondValue"></param>
+        /// <param name="thirdValue"></param>
+        /// <returns></returns>
+        public static T MaxValue<T>(T firstValue, T secondValue, T thirdValue)
+        {
+            if (Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0)
+            {
+                return firstValue;
+            }
+            if (Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+           Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            if (Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+          Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0)
+            {
+                return thirdValue;
+            }
+            return default;
+        }
 
     }
+
+    
 }

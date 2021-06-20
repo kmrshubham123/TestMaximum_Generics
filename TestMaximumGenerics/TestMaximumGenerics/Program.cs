@@ -14,6 +14,14 @@ namespace TestMaximumGenerics
             Console.WriteLine("Maximum Float Number is:- "+maximum.FindMaximumFloatNumber(10.5,20.5,30.5));
             //UC3:-Longest Word using string
             Console.WriteLine("Longest Word:- "+maximum.FindLongestString("Apple","Banana","Pomegranate"));
+            //Refactor:-
+            Console.WriteLine("===========Generics============");
+            int maximumint = MaximumNumber.MaxValue<int>(10, 20, 30);
+            Console.WriteLine("Maximum Integer Value " +maximumint);
+            float maximumfloat = MaximumNumber.MaxValue<float>(10.5f, 20.5f, 30.5f);
+            Console.WriteLine("Maximum Float Value " + maximumfloat);
+            string maximumstring = MaximumNumber.MaxValue<string>("Apple","Banana","Pomegranate");
+            Console.WriteLine("Maximum String Value " + maximumstring);
         }
     }
 }

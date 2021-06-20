@@ -136,6 +136,46 @@ namespace MaximumTest
             Assert.Pass();
         }//End of TC3:-TC3.1/TC3.2/TC3.3
 
+        //Refactor 1:-
+        [Test]
+        public void MaximumInt_ValueAt_FirstParameter_Return_Highest_value()
+        {
+            //Arrange
+            int firstValue = 30, secondValue= 20, thirdValue = 10;
+            int expected = 30;
+            //Act
+            int result = MaximumNumber.MaxValue<int>(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+            Assert.Pass();
+        }
+        [Test]
+        public void MaximumFloat_ValueAt_SecondParameter_Return_Highest_value()
+        {
+            //Arrange
+            float firstValue = 19.99f, secondValue = 20.5f, thirdValue = 10.98f;
+            float expected = 20.5f;
+            //Act
+            float result = MaximumNumber.MaxValue<float>(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+            Assert.Pass();
+        }
+        [Test]
+        public void MaximumString_ValueAt_ThirdParameter_Return_Highest_value()
+        {
+            //Arrange
+            string firstValue = "Apple", secondValue = "Banana", thirdValue = "Pomegranate";
+            string expected = "Pomegranate";
+            //Act
+            string result = MaximumNumber.MaxValue<string>(firstValue, secondValue, thirdValue);
+            //Assert
+            Assert.AreEqual(expected, result);
+            Assert.Pass();
+        }
+
+
+
 
 
     }
